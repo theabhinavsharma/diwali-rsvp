@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Diwali House Party RSVP</title>
+<meta name="description" content="You're invited to the Diwali House Party at B202 Orchid Lakeview, Bellandur. Hosted by Abhinav & Kabyashree, 8 November.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rozha+One&family=Outfit:wght@300;400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:#12091f; --gold:#ffc23d; --saffron:#ff7a1a; --rose:#ff4f7b;
+    --cream:#fff3dc; --muted:#cdb9e6; --ecg:#3df0c2; --line:#ffffff1f;
+    --paper:#fff8ec; --ink:#2b1a0e;
+  }
+  *{box-sizing:border-box;margin:0}
+  html,body{min-height:100%}
+  body{
+    font-family:Outfit,system-ui,-apple-system,sans-serif;color:var(--cream);
+    background:
+      radial-gradient(1100px 650px at 50% -10%,#4a1d5e 0%,transparent 60%),
+      radial-gradient(800px 600px at 100% 100%,#3b1030 0%,transparent 55%),
+      radial-gradient(700px 500px at 0% 80%,#1d1a4a 0%,transparent 60%),
+      var(--night);
+    overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  }
+  #fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
+
+  main{position:relative;z-index:1;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px 16px 48px}
+  main.shake{animation:shake .45s linear}
+  @keyframes shake{
+    10%,90%{transform:translate(-2px,1px)} 20%,80%{transform:translate(4px,-2px)}
+    30%,50%,70%{transform:translate(-8px,3px)} 40%,60%{transform:translate(8px,-3px)}
+  }
+
+  .card{
+    position:relative;width:100%;max-width:560px;text-align:center;overflow:hidden;
+    background:linear-gradient(180deg,#2a1442f0,#1a0c2bf0);
+    border:1px solid #ffc23d55;border-radius:28px;padding:48px 26px 26px;
+    box-shadow:0 30px 80px #0009,inset 0 0 0 6px #ffffff06;
+    animation:rise .9s cubic-bezier(.2,.9,.3,1.2) both;
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(30px) scale(.97)}}
+  .garland{
+    position:absolute;top:0;left:0;right:0;height:30px;
+    background:
+      radial-gradient(circle at 13px 9px,var(--gold) 8px,transparent 9px) 0 0/26px 30px repeat-x,
+      radial-gradient(circle at 13px 9px,var(--saffron) 8px,transparent 9px) 13px 7px/26px 30px repeat-x;
+    filter:drop-shadow(0 3px 4px #0006);
+  }
+
+  .eyebrow{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  h1{
+    font-family:'Rozha One',Georgia,serif;font-weight:400;line-height:.95;margin-top:12px;
+    font-size:clamp(42px,11vw,64px);
+    background:linear-gradient(180deg,#fff1c2,var(--gold) 55%,var(--saffron));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-shadow:0 0 30px #ffc23d33;
+  }
+  h1 span{display:block;font-size:.82em}
+  .ecg{display:block;width:100%;max-width:340px;height:52px;margin:10px auto 4px;overflow:visible}
+  .ecg path{fill:none;stroke:var(--ecg);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:100;stroke-dashoffset:100;filter:drop-shadow(0 0 6px var(--ecg));animation:beat 2.6s linear infinite}
+  @keyframes beat{0%{stroke-dashoffset:100;opacity:1}70%{stroke-dashoffset:0;opacity:1}100%{stroke-dashoffset:0;opacity:0}}
+  .hosts{color:var(--muted);font-size:15px}
+  .hosts b{display:block;color:var(--cream);font-size:21px;font-weight:600;margin-top:2px}
+
+  .details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:24px 0 8px;text-align:left}
+  .d{background:#ffffff0b;border:1px solid var(--line);border-radius:16px;padding:14px 14px 13px;position:relative}
+  .d.wide{grid-column:1/-1}
+  .d .ic{position:absolute;right:12px;top:10px;font-size:22px}
+  .d small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
+  .d b{display:block;font-weight:600;font-size:16px;padding-right:26px}
+  .d em{display:block;font-style:normal;color:var(--muted);font-size:14px;margin-top:2px}
+  .d a{color:var(--ecg);font-size:13px;text-decoration:none}
+  .d a:hover{text-decoration:underline}
+
+  h2{font-family:'Rozha One',Georgia,serif;font-weight:400;font-size:32px;color:var(--cream);margin-top:22px}
+  .sub{color:var(--muted);margin-top:6px;line-height:1.45}
+
+  .btns{display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;margin-top:18px;min-height:64px}
+  .btn{
+    font:600 18px Outfit,system-ui,sans-serif;border:0;border-radius:999px;padding:15px 28px;cursor:pointer;
+    white-space:nowrap;text-decoration:none;display:inline-block;user-select:none;-webkit-user-select:none;
+  }
+  .yes{
+    background:linear-gradient(135deg,#ffd76a,var(--gold) 40%,var(--saffron));color:#2a0d00;
+    box-shadow:0 10px 30px #ff7a1a66,inset 0 -3px 0 #0002;
+    transition:scale .35s cubic-bezier(.3,1.6,.5,1),filter .2s;position:relative;z-index:2;
+  }
+  .yes:hover{filter:brightness(1.08)}
+  .no{background:#ffffff12;color:var(--cream);border:1px solid #ffffff38;backdrop-filter:blur(4px)}
+  .no.loose{position:fixed;z-index:40;margin:0}
+  .noslot{display:inline-block}
+  .quip{min-height:24px;margin-top:14px;color:var(--gold);font-weight:600;font-size:15px}
+  .quip.pop{animation:quip .5s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes quip{from{opacity:0;transform:scale(.6)}}
+
+  /* Prescription pad */
+  .rx{
+    margin-top:18px;text-align:left;color:var(--ink);background-color:var(--paper);border-radius:18px;
+    padding:20px 18px 22px 30px;position:relative;box-shadow:0 18px 40px #0007;
+    background-image:linear-gradient(90deg,transparent 18px,#ff4f7b55 18px 19.5px,transparent 19.5px);
+  }
+  .rx-head{display:flex;gap:12px;align-items:center;border-bottom:2px solid #2b1a0e22;padding-bottom:12px;margin-bottom:6px}
+  .rx-sym{font-family:Georgia,serif;font-size:44px;line-height:1;color:var(--rose)}
+  .rx-head b{display:block;font-size:18px}
+  .rx-head small{color:#7a5a3e;font-size:12.5px}
+  .field{margin-top:16px}
+  .field > .lab{display:block;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:#7a5a3e;margin-bottom:6px}
+  .rx input[type=text],.rx textarea{
+    width:100%;font:700 26px Caveat,cursive;color:#1d3a8a;background:transparent;border:0;
+    border-bottom:2px dashed #2b1a0e44;padding:2px 2px 4px;outline:none;resize:none;
+  }
+  .rx input[type=text]:focus,.rx textarea:focus{border-bottom-color:var(--saffron)}
+  .rx ::placeholder{color:#2b1a0e40}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{position:relative}
+  .chip input{position:absolute;opacity:0;pointer-events:none}
+  .chip span{
+    display:inline-block;padding:9px 14px;border-radius:999px;cursor:pointer;font-weight:600;font-size:15px;
+    border:1.5px dashed #2b1a0e40;background:#fff;transition:all .18s;
+  }
+  .chip span:hover{border-color:var(--saffron)}
+  .chip input:checked + span{background:var(--saffron);color:#fff;border:1.5px solid var(--saffron);transform:rotate(-2deg) scale(1.04);box-shadow:0 6px 14px #ff7a1a55}
+  .chip input:focus-visible + span{outline:3px solid #1d3a8a55;outline-offset:2px}
+  #sweetOther{margin-top:10px}
+  .err{color:#c0123c;font-weight:600;font-size:14px;min-height:20px;margin-top:12px}
+  .rx .btn{width:100%;margin-top:4px}
+  .sign{text-align:right;font:700 22px Caveat,cursive;color:#7a5a3e;margin-top:10px}
+
+  .big{font-size:64px;margin-top:10px;animation:bob 2s ease-in-out infinite}
+  @keyframes bob{50%{transform:translateY(-6px) rotate(4deg)}}
+  .summary{display:grid;grid-template-columns:auto 1fr;gap:8px 14px;text-align:left;background:#ffffff0b;border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:18px 0}
+  .summary dt{color:var(--gold);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:3px}
+  .summary dd{font-weight:600}
+  .wa{background:#25d366;color:#05230f;box-shadow:0 10px 26px #25d36655;width:100%}
+  .tiny{font-size:13px;color:var(--muted);margin-top:10px}
+  .link{background:none;border:0;color:var(--ecg);font:600 15px Outfit,sans-serif;cursor:pointer;margin-top:16px;padding:6px}
+  .link:hover{text-decoration:underline}
+
+  .foot{margin-top:26px;font-size:20px;letter-spacing:10px}
+  .foot span{display:inline-block;animation:flicker 1.6s ease-in-out infinite}
+  .foot span:nth-child(2){animation-delay:.4s}.foot span:nth-child(3){animation-delay:.8s}
+  @keyframes flicker{50%{filter:brightness(1.4) drop-shadow(0 -4px 8px #ffc23d);transform:translateY(-1px)}}
+  .foot p{font-size:12px;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+
+  /* Boom text */
+  .boom{position:fixed;z-index:70;pointer-events:none;font:400 46px 'Rozha One',serif;color:var(--gold);
+    text-shadow:0 0 20px var(--saffron),0 4px 0 #6a1b00;transform:translate(-50%,-50%);animation:boom 1.1s ease-out forwards;white-space:nowrap}
+  @keyframes boom{0%{opacity:0;transform:translate(-50%,-50%) scale(.3) rotate(-10deg)}20%{opacity:1;transform:translate(-50%,-50%) scale(1.25) rotate(4deg)}100%{opacity:0;transform:translate(-50%,-90%) scale(1)}}
+
+  /* Sad modal */
+  .modal{position:fixed;inset:0;z-index:80;display:grid;place-items:center;background:#0a0414d9;backdrop-filter:blur(6px);padding:16px}
+  .modal[hidden]{display:none}
+  .sheet{width:100%;max-width:400px;background:linear-gradient(#2a1442,#1a0c2b);border:1px solid #ff4f7b66;border-radius:26px;padding:30px 22px 24px;text-align:center;animation:pop .55s cubic-bezier(.3,1.6,.5,1)}
+  @keyframes pop{from{opacity:0;transform:scale(.6)}}
+  .face{position:relative;display:inline-block;font-size:96px;line-height:1;animation:tremble .18s infinite alternate}
+  @keyframes tremble{from{transform:rotate(-2deg)}to{transform:rotate(2deg) translateY(1px)}}
+  .tear{position:absolute;width:12px;height:17px;background:#8fdcff;border-radius:50% 50% 50% 50%/65% 65% 35% 35%;top:52%;opacity:0;animation:tear 1.5s ease-in infinite}
+  .tear.l{left:22%}.tear.r{right:22%;animation-delay:.75s}
+  @keyframes tear{0%{opacity:0;transform:translateY(0) scale(.5)}15%{opacity:1;transform:scale(1)}100%{opacity:0;transform:translateY(60px)}}
+  .sheet h3{font:400 30px 'Rozha One',serif;margin-top:10px}
+  .sheet p{color:var(--muted);margin-top:8px;line-height:1.45}
+  .sheet .yes{width:100%;margin-top:20px}
+  .sheet .sad-no{background:none;border:0;color:#a893c2;font:400 14px Outfit,sans-serif;margin-top:14px;cursor:pointer;text-decoration:underline}
+
+  @media (max-width:440px){
+    .card{padding:44px 18px 22px;border-radius:22px}
+    .details{grid-template-columns:1fr}
+    .btn{font-size:17px;padding:14px 22px}
+    h2{font-size:28px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .ecg path,.foot span,.big,.face{animation:none}
+    .ecg path{stroke-dashoffset:0}
+  }
+</style>
+</head>
+<body>
+<canvas id="fx"></canvas>
+
+<main id="main">
+  <article class="card">
+    <div class="garland" aria-hidden="true"></div>
+
+    <p class="eyebrow">🩺 Docs only · You're invited</p>
+    <h1>Diwali<span>House Party</span></h1>
+    <svg class="ecg" viewBox="0 0 340 56" aria-hidden="true">
+      <path pathLength="100" d="M0 30 H62 L70 30 L76 20 L82 30 L92 30 L99 4 L107 54 L114 30 H150 L156 24 L162 30 H170 C170 22 178 18 184 24 C190 18 198 22 198 30 L184 44 L170 30 H206 L214 30 L220 20 L226 30 L236 30 L243 4 L251 54 L258 30 H340"/>
+    </svg>
+    <p class="hosts">Hosted with love by <b>Abhinav &amp; Kabyashree</b></p>
+
+    <div class="details">
+      <div class="d">
+        <span class="ic">📅</span><small>When</small>
+        <b>Sun, 8 November</b>
+        <!-- Change the start time here -->
+        <em>7:00 PM onwards</em>
+      </div>
+      <div class="d">
+        <span class="ic">📍</span><small>Where</small>
+        <b>B202, Orchid Lakeview</b>
+        <em>Bellandur, Bengaluru</em>
+        <a href="https://www.google.com/maps/search/?api=1&query=Orchid+Lakeview+Bellandur+Bengaluru" target="_blank" rel="noopener">Open in Maps →</a>
+      </div>
+      <div class="d wide">
+        <span class="ic">🪷</span><small>Dress code</small>
+        <b>Come in your traditional best</b>
+        <em>Sarees, kurtas, sherwanis, lehengas, the works. Scrubs not accepted ✨</em>
+      </div>
+    </div>
+
+    <!-- Step 1: the question -->
+    <section id="ask">
+      <h2>Will you join us?</h2>
+      <div class="btns">
+        <button id="yesBtn" class="btn yes" type="button">Yes, I'm in! 🎉</button>
+        <span class="noslot"><button id="noBtn" class="btn no" type="button">No 🙅</button></span>
+      </div>
+      <p id="quip" class="quip" aria-live="polite"></p>
+    </section>
+
+    <!-- Step 2a: yes -> prescription form -->
+    <section id="formSec" hidden>
+      <h2>Yay! You're on the guest list 🎊</h2>
+      <p class="sub">Just fill in your party prescription.</p>
+      <form id="rx" class="rx" novalidate>
+        <div class="rx-head">
+          <span class="rx-sym">℞</span>
+          <div><b>Party Prescription</b><small>Prescribed by Abhinav &amp; Kabyashree · Orchid Lakeview</small></div>
+        </div>
+
+        <div class="field">
+          <label class="lab" for="nm">Patient name</label>
+          <input id="nm" type="text" name="name" placeholder="Your good name" autocomplete="name" maxlength="60">
+        </div>
+
+        <div class="field">
+          <span class="lab">Diet</span>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="diet" value="Veg"><span>🥦 Veg</span></label>
+            <label class="chip"><input type="radio" name="diet" value="Non-veg"><span>🍗 Non-veg</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="lab">Alcohol</span>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="drink" value="Yes"><span>🍻 Yes please</span></label>
+            <label class="chip"><input type="radio" name="drink" value="No"><span>🧃 No, mocktails</span></label>
+          </div>
+        </div>
+
+        <div class="field">
+          <span class="lab">Daily dose of sweetness: favourite mithai</span>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="sweet" value="Kaju katli"><span>💎 Kaju katli</span></label>
+            <label class="chip"><input type="radio" name="sweet" value="Barfi"><span>🟨 Barfi</span></label>
+            <label class="chip"><input type="radio" name="sweet" value="Rasgulla"><span>⚪ Rasgulla</span></label>
+            <label class="chip"><input type="radio" name="sweet" value="Gulab jamun"><span>🟤 Gulab jamun</span></label>
+            <label class="chip"><input type="radio" name="sweet" value="other"><span>✍️ Something else</span></label>
+          </div>
+          <input id="sweetOther" type="text" name="sweetOther" placeholder="Type your favourite sweet" maxlength="40" hidden>
+        </div>
+
+        <p class="err" id="rxErr" aria-live="polite"></p>
+        <button class="btn yes" type="submit">Sign the prescription ✍️</button>
+        <p class="sign">~ Rx: unlimited refills of fun</p>
+      </form>
+    </section>
+
+    <!-- Step 2b: no (after all that) -->
+    <section id="declineSec" hidden>
+      <div class="big">💔</div>
+      <h2>We'll miss you!</h2>
+      <p class="sub">The party will have one less heartbeat. Tell us who broke our hearts.</p>
+      <form id="declineForm" class="rx" novalidate>
+        <div class="field" style="margin-top:0">
+          <label class="lab" for="dnm">Your name</label>
+          <input id="dnm" type="text" name="name" placeholder="Your good name" autocomplete="name" maxlength="60">
+        </div>
+        <div class="field">
+          <label class="lab" for="dnote">A note for the hosts (optional)</label>
+          <textarea id="dnote" name="note" rows="2" maxlength="200" placeholder="Next time for sure…"></textarea>
+        </div>
+        <p class="err" id="dErr" aria-live="polite"></p>
+        <button class="btn yes" type="submit">Send my regrets 😔</button>
+      </form>
+      <button class="link" type="button" id="changeMind">Wait, I changed my mind. I'm coming! 🎉</button>
+    </section>
+
+    <!-- Step 3: done -->
+    <section id="doneSec" hidden>
+      <div class="big" id="doneEmoji">🎉</div>
+      <h2 id="doneTitle"></h2>
+      <p class="sub" id="doneSub"></p>
+      <dl class="summary" id="doneList"></dl>
+      <a id="waBtn" class="btn wa" target="_blank" rel="noopener">Send to the hosts on WhatsApp</a>
+      <p class="tiny">Your RSVP has reached Abhinav &amp; Kabyashree. Want to send them a WhatsApp too? Tap above.</p>
+      <button class="link" type="button" id="editBtn">Edit my answers</button>
+    </section>
+
+    <div class="foot" aria-hidden="true">
+      <span>🪔</span><span>🪔</span><span>🪔</span>
+      <p>B202 · ORCHID LAKEVIEW · BELLANDUR</p>
+    </div>
+  </article>
+</main>
+
+<!-- The "are you really sure?" modal -->
+<div class="modal" id="sad" hidden role="dialog" aria-modal="true" aria-labelledby="sadTitle">
+  <div class="sheet">
+    <div class="face">🥺<i class="tear l"></i><i class="tear r"></i></div>
+    <h3 id="sadTitle">Are you <em>really</em> sure?</h3>
+    <p>Abhinav &amp; Kabyashree have already counted you in. Saying no would make us really, really sad…</p>
+    <button class="btn yes" type="button" id="sadYes">Okay okay, I'll come! 🎉</button>
+    <br>
+    <button class="sad-no" type="button" id="sadNo">Yes, I'm sure. I still can't come.</button>
+  </div>
+</div>
+
+<script>
+  // Put the host's WhatsApp number here (country code, no "+" or spaces), e.g. "919876543210".
+  // Leave empty and WhatsApp will ask the guest which chat to send the RSVP to.
+  const CONFIG = { hostWhatsApp: "" };
+
+  // Every RSVP is also posted to the hosts' Google Form ("Diwali House Party RSVP").
+  const GFORM = {
+    action: "https://docs.google.com/forms/d/e/1FAIpQLSctaiZAZApESzSP3_to69kqHskxoZI3uThZvgdCReA4kMUlVA/formResponse",
+    fields: { rsvp: 152684049, name: 1797498063, diet: 2084225543, alcohol: 1485502462, sweet: 384330536, note: 1779268688 },
+  };
+  function recordRSVP(data) {
+    const body = new URLSearchParams();
+    for (const [k, id] of Object.entries(GFORM.fields)) body.append('entry.' + id, data[k] || '');
+    // Google doesn't send CORS headers, so the response is opaque; the submission still lands.
+    return fetch(GFORM.action, { method: 'POST', mode: 'no-cors', body }).catch(() => {});
+  }
+
+  const $ = s => document.querySelector(s);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Fireworks / sparks canvas ---------- */
+  const cv = $('#fx'), ctx = cv.getContext('2d');
+  let W, H;
+  function size() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = innerWidth; H = innerHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+  size(); addEventListener('resize', size);
+
+  const PALETTE = ['#ffc23d', '#ff7a1a', '#ff4f7b', '#fff3dc', '#3df0c2', '#b77dff'];
+  const parts = [];
+  const pick = a => a[Math.random() * a.length | 0];
+
+  function add(x, y, vx, vy, o = {}) {
+    if (parts.length > 2500) return;
+    const life = o.life || 60;
+    parts.push({ x, y, vx, vy, life, max: life, c: o.c || '#ffc23d', g: o.g ?? 0.06, s: o.s || 2, drag: o.drag ?? 0.985, rocket: o.rocket });
+  }
+  function burst(x, y, n = 60, o = {}) {
+    const cols = o.colors || PALETTE, base = pick(cols);
+    for (let i = 0; i < n; i++) {
+      const a = Math.random() * Math.PI * 2, sp = (o.speed || 4) * (0.35 + Math.random() * 0.75);
+      add(x, y, Math.cos(a) * sp, Math.sin(a) * sp, { c: o.mixed ? pick(cols) : base, life: 45 + Math.random() * 45, s: o.s || 2, g: 0.05 });
+    }
+  }
+  function rocket(x0, ty) {
+    const tx = x0 + (Math.random() - 0.5) * 160, frames = 55;
+    add(x0, H + 10, (tx - x0) / frames, -(H + 10 - ty) / frames, { life: frames, g: 0, drag: 1, c: '#fff3dc', rocket: true });
+  }
+
+  (function tick() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.globalCompositeOperation = 'lighter';
+    ctx.lineCap = 'round';
+    for (let i = parts.length - 1; i >= 0; i--) {
+      const p = parts[i];
+      p.vx *= p.drag; p.vy = p.vy * p.drag + p.g; p.x += p.vx; p.y += p.vy; p.life--;
+      if (p.rocket && Math.random() < 0.8) add(p.x, p.y, (Math.random() - 0.5) * 0.6, Math.random() * 0.8, { c: '#ffb35c', life: 18, s: 1.4 });
+      if (p.life <= 0) { parts.splice(i, 1); if (p.rocket) burst(p.x, p.y, 70, { speed: 3.6 }); continue; }
+      ctx.globalAlpha = Math.min(1, (p.life / p.max) * 1.4);
+      ctx.strokeStyle = p.c; ctx.lineWidth = p.s;
+      ctx.beginPath(); ctx.moveTo(p.x - p.vx * 2.5, p.y - p.vy * 2.5); ctx.lineTo(p.x, p.y); ctx.stroke();
+    }
+    ctx.globalAlpha = 1;
+    requestAnimationFrame(tick);
+  })();
+
+  (function ambient() {
+    if (!document.hidden && !reduce) rocket(W * (0.08 + Math.random() * 0.84), H * (0.1 + Math.random() * 0.3));
+    setTimeout(ambient, 1500 + Math.random() * 2300);
+  })();
+
+  function celebrate() {
+    for (let i = 0; i < 6; i++)
+      setTimeout(() => burst(W * (0.15 + Math.random() * 0.7), H * (0.12 + Math.random() * 0.35), 90, { mixed: true, speed: 5 }), i * 200);
+  }
+
+  /* ---------- Animation helpers ---------- */
+  const tween = (dur, fn) => new Promise(res => {
+    const t0 = performance.now();
+    const f = now => { const t = Math.min(1, (now - t0) / dur); fn(t); t < 1 ? requestAnimationFrame(f) : res(); };
+    requestAnimationFrame(f);
+  });
+  const easeIO = t => t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  const easeOut = t => 1 - Math.pow(1 - t, 3);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+  /* ---------- The runaway "No" ---------- */
+  const noBtn = $('#noBtn'), yesBtn = $('#yesBtn'), quip = $('#quip');
+  let tries = 0, busy = false, yesScale = 1, yesShift = { x: 0, y: 0 };
+
+  function center(el) { const r = el.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; }
+  function place(x, y) { noBtn.style.left = (x - noBtn.offsetWidth / 2) + 'px'; noBtn.style.top = (y - noBtn.offsetHeight / 2) + 'px'; }
+
+  // Pull the No out of the layout (so it can fly anywhere) while keeping its slot so Yes doesn't jump.
+  function loosen() {
+    if (noBtn.classList.contains('loose')) return;
+    const c = center(noBtn), slot = noBtn.parentElement;
+    slot.style.width = noBtn.offsetWidth + 'px';
+    slot.style.height = noBtn.offsetHeight + 'px';
+    document.body.appendChild(noBtn);
+    noBtn.classList.add('loose');
+    place(c.x, c.y);
+  }
+
+  // A random on-screen spot, far from the Yes button and from where the No is now.
+  function spot() {
+    const w = noBtn.offsetWidth, h = noBtn.offsetHeight, m = 16, y = center(yesBtn), c = center(noBtn);
+    let best = null;
+    for (let i = 0; i < 25; i++) {
+      const p = { x: m + w / 2 + Math.random() * Math.max(1, W - w - 2 * m), y: 70 + h / 2 + Math.random() * Math.max(1, H - h - 160) };
+      const d = Math.min(Math.hypot(p.x - y.x, p.y - y.y), Math.hypot(p.x - c.x, p.y - c.y));
+      if (d > 200) return p;
+      if (!best || d > best.d) best = { ...p, d };
+    }
+    return best;
+  }
+
+  function say(msg) { quip.textContent = msg; quip.classList.remove('pop'); void quip.offsetWidth; quip.classList.add('pop'); }
+  function growYes() { yesScale = Math.min(1.45, yesScale + 0.1); yesBtn.style.scale = yesScale; }
+
+  // Attempt 1: Yes and No trade places
+  async function swap() {
+    const n = center(noBtn), y = center(yesBtn), dx = n.x - y.x, dy = n.y - y.y, base = { ...yesShift };
+    await tween(reduce ? 150 : 650, t => {
+      const e = easeIO(t), arc = Math.sin(t * Math.PI) * 60;
+      place(n.x + (y.x - n.x) * e, n.y + (y.y - n.y) * e - arc);
+      yesShift = { x: base.x + dx * e, y: base.y + dy * e + arc };
+      yesBtn.style.translate = `${yesShift.x}px ${yesShift.y}px`;
+      if (Math.random() < 0.5) add(n.x + (y.x - n.x) * e, n.y + (y.y - n.y) * e - arc, (Math.random() - .5) * 2, Math.random() * 2, { c: pick(PALETTE), life: 22, s: 1.5 });
+    });
+  }
+
+  // Attempt 2: spins away like a chakri, throwing sparks
+  async function chakri() {
+    const a = center(noBtn), b = spot();
+    await tween(reduce ? 200 : 1150, t => {
+      const e = easeIO(t), r = (1 - t) * 50;
+      const x = a.x + (b.x - a.x) * e + Math.cos(t * 16) * r, y = a.y + (b.y - a.y) * e + Math.sin(t * 16) * r;
+      place(x, y);
+      noBtn.style.transform = `rotate(${e * 1440}deg)`;
+      for (let i = 0; i < 3; i++) {
+        const ang = t * 70 + i * 2.094;
+        add(x + Math.cos(ang) * 28, y + Math.sin(ang) * 28, -Math.sin(ang) * 3.4, Math.cos(ang) * 3.4, { c: PALETTE[i], life: 28, s: 2, g: 0.04 });
+      }
+    });
+    noBtn.style.transform = '';
+  }
+
+  // Attempt 3: fuse sizzles, then it shoots off the top like a fuljhadi rocket and drops in elsewhere
+  async function fuljhadi() {
+    const a = center(noBtn), b = spot(), h = noBtn.offsetHeight;
+    await tween(300, t => {
+      noBtn.style.transform = `translateX(${Math.sin(t * 60) * 3}px)`;
+      add(a.x + (Math.random() - .5) * 30, a.y + h / 2, (Math.random() - .5) * 2.5, Math.random() * 2, { c: '#ffc23d', life: 20, s: 1.5 });
+    });
+    await tween(reduce ? 200 : 650, t => {
+      const x = a.x + Math.sin(t * 9) * 18, y = a.y + (-90 - a.y) * t * t;
+      place(x, y);
+      noBtn.style.transform = `rotate(${Math.sin(t * 9) * 12}deg)`;
+      for (let i = 0; i < 5; i++)
+        add(x + (Math.random() - .5) * 16, y + h / 2, (Math.random() - .5) * 2.6, 2 + Math.random() * 3, { c: Math.random() < .5 ? '#ffc23d' : '#fff3dc', life: 30 + Math.random() * 25, s: 1.6, g: 0.08 });
+    });
+    burst(a.x, 30, 60, { colors: ['#ffc23d', '#fff3dc', '#ff7a1a'], mixed: true, speed: 3.5 });
+    await sleep(300);
+    await tween(reduce ? 200 : 750, t => {
+      const e = easeOut(t), y = -90 + (b.y + 90) * e;
+      place(b.x, y);
+      noBtn.style.transform = `rotate(${(1 - e) * -30}deg)`;
+      if (t < .7) add(b.x, y - h / 2, (Math.random() - .5), -Math.random() * 1.5, { c: '#ffc23d', life: 18, s: 1.4 });
+    });
+    noBtn.style.transform = '';
+  }
+
+  // Attempt 4: it's a pataka. The fuse burns, it goes BOOM, then the sad face
+  async function pataka() {
+    const c = center(noBtn), w = noBtn.offsetWidth, h = noBtn.offsetHeight;
+    await tween(800, t => {
+      noBtn.style.transform = `scale(${1 + t * 0.3}) rotate(${Math.sin(t * 55) * (3 + t * 6)}deg)`;
+      add(c.x + w / 2 - 8, c.y - h / 2, (Math.random() - .5) * 2.4, -Math.random() * 2.8, { c: '#ffc23d', life: 16, s: 1.5, g: 0.1 });
+    });
+    noBtn.style.visibility = 'hidden';
+    burst(c.x, c.y, 160, { mixed: true, speed: 7.5, s: 2.4 });
+    burst(c.x, c.y, 60, { colors: ['#fff3dc'], speed: 3 });
+    const b = document.createElement('div');
+    b.className = 'boom'; b.textContent = 'DHAAM! 💥';
+    b.style.left = Math.min(Math.max(c.x, 120), W - 120) + 'px'; b.style.top = c.y + 'px';
+    document.body.appendChild(b); setTimeout(() => b.remove(), 1200);
+    const main = $('#main'); main.classList.add('shake'); setTimeout(() => main.classList.remove('shake'), 500);
+    await sleep(900);
+    $('#sad').hidden = false;
+    $('#sadYes').focus();
+  }
+
+  const stages = [
+    [swap,     "Oops, swapped! Your finger clearly meant Yes 😉"],
+    [chakri,   "Whoa, the No turned into a chakri 🌀"],
+    [fuljhadi, "Fuljhadi says: not today 🎇"],
+    [pataka,   "Uh oh, that one was a pataka… 💥"],
+  ];
+
+  noBtn.addEventListener('click', async e => {
+    e.preventDefault();
+    if (busy) return;
+    busy = true;
+    loosen();
+    const [fn, msg] = stages[Math.min(tries, stages.length - 1)];
+    tries++;
+    say(msg);
+    growYes();
+    await fn();
+    busy = false;
+  });
+
+  /* ---------- Flow between screens ---------- */
+  function show(id) {
+    ['ask', 'formSec', 'declineSec', 'doneSec'].forEach(s => $('#' + s).hidden = s !== id);
+    $('#' + id).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  function retireNo() { noBtn.style.display = 'none'; }
+  function goYes() { retireNo(); celebrate(); show('formSec'); }
+
+  yesBtn.addEventListener('click', goYes);
+  $('#sadYes').addEventListener('click', () => { $('#sad').hidden = true; goYes(); });
+  $('#sadNo').addEventListener('click', () => { $('#sad').hidden = true; retireNo(); show('declineSec'); });
+  $('#changeMind').addEventListener('click', goYes);
+
+  // "Something else" sweet -> show text box
+  document.querySelectorAll('input[name=sweet]').forEach(r => r.addEventListener('change', () => {
+    const other = $('#sweetOther');
+    other.hidden = $('input[name=sweet]:checked').value !== 'other';
+    if (!other.hidden) other.focus();
+  }));
+
+  function waLink(text) {
+    return `https://wa.me/${CONFIG.hostWhatsApp}?text=${encodeURIComponent(text)}`;
+  }
+
+  function showDone({ emoji, title, sub, rows, message, editLabel, onEdit }) {
+    $('#doneEmoji').textContent = emoji;
+    $('#doneTitle').textContent = title;
+    $('#doneSub').textContent = sub;
+    const dl = $('#doneList'); dl.replaceChildren();
+    rows.forEach(([k, v]) => {
+      const dt = document.createElement('dt'), dd = document.createElement('dd');
+      dt.textContent = k; dd.textContent = v; dl.append(dt, dd);
+    });
+    $('#waBtn').href = waLink(message);
+    const edit = $('#editBtn'); edit.textContent = editLabel; edit.onclick = onEdit;
+    show('doneSec');
+  }
+
+  $('#rx').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const name = (f.get('name') || '').trim(), diet = f.get('diet'), drink = f.get('drink');
+    let sweet = f.get('sweet');
+    if (sweet === 'other') sweet = (f.get('sweetOther') || '').trim();
+    const missing = [];
+    if (!name) missing.push('your name');
+    if (!diet) missing.push('veg / non-veg');
+    if (!drink) missing.push('alcohol');
+    if (!sweet) missing.push('favourite sweet');
+    if (missing.length) { $('#rxErr').textContent = 'Doctor still needs: ' + missing.join(', '); return; }
+    $('#rxErr').textContent = '';
+
+    recordRSVP({ rsvp: 'Yes', name, diet, alcohol: drink, sweet, note: `No-button attempts: ${tries}` });
+    celebrate();
+    showDone({
+      emoji: '🎉',
+      title: `See you there, ${name.split(' ')[0]}!`,
+      sub: 'Discharge summary: fit to party. Sunday, 8 November, 7 PM at B202, Orchid Lakeview. Come in your traditional best!',
+      rows: [['Name', name], ['Diet', diet], ['Alcohol', drink === 'Yes' ? 'Yes please 🍻' : 'No, mocktails 🧃'], ['Sweet', sweet]],
+      message:
+        `🎉 RSVP: YES, I'm coming!\n\nName: ${name}\nFood: ${diet}\nAlcohol: ${drink}\nFavourite sweet: ${sweet}\n\n` +
+        `See you on 8 Nov at B202, Orchid Lakeview 🩺✨`,
+      editLabel: 'Edit my answers',
+      onEdit: () => show('formSec'),
+    });
+  });
+
+  $('#declineForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const name = (f.get('name') || '').trim(), note = (f.get('note') || '').trim();
+    if (!name) { $('#dErr').textContent = 'At least tell us your name 🥲'; return; }
+    $('#dErr').textContent = '';
+    recordRSVP({ rsvp: 'No', name, note });
+    showDone({
+      emoji: '😔',
+      title: "We'll miss you",
+      sub: "Thanks for letting us know. We'll save you a kaju katli anyway.",
+      rows: note ? [['Name', name], ['Note', note]] : [['Name', name]],
+      message: `😔 RSVP: Sorry, can't make it to the Diwali House Party.\n\nName: ${name}` + (note ? `\nNote: ${note}` : ''),
+      editLabel: "Wait, I changed my mind. I'm coming! 🎉",
+      onEdit: goYes,
+    });
+  });
+</script>
+</body>
+</html>
